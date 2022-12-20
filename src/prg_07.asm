@@ -357,27 +357,19 @@ __c27c:     lda $f7            ; $c27c: a5 f7
             rts                ; $c2a5: 60
 
 ;-------------------------------------------------------------------------------
-__c2a6:     .hex e9 ea         ; $c2a6: e9 ea         Data
-__c2a8:     .hex eb ec ed ee   ; $c2a8: eb ec ed ee   Data
-            .hex ef f0 f1      ; $c2ac: ef f0 f1      Data
-__c2af:     .hex f2 f3 f4 f5   ; $c2af: f2 f3 f4 f5   Data
-            .hex f6 f7 f8      ; $c2b3: f6 f7 f8      Data
-__c2b6:     .hex 24 26 01 09   ; $c2b6: 24 26 01 09   Data
-            .hex 08 08 26 1d   ; $c2ba: 08 08 26 1d   Data
-            .hex 0a 12 1d 18   ; $c2be: 0a 12 1d 18   Data
-            .hex 26 0a 16 0e   ; $c2c2: 26 0a 16 0e   Data
-            .hex 1b 12 0c 0a   ; $c2c6: 1b 12 0c 0a   Data
-            .hex 26 0c 18 1b   ; $c2ca: 26 0c 18 1b   Data
-            .hex 19 25         ; $c2ce: 19 25         Data
-__c2d0:     .hex 15 12 0c 0e   ; $c2d0: 15 12 0c 0e   Data
-            .hex 17 1c 0e 0d   ; $c2d4: 17 1c 0e 0d   Data
-            .hex 26 0b 22      ; $c2d8: 26 0b 22      Data
-__c2db:     .hex 17 12 17 1d   ; $c2db: 17 12 17 1d   Data
-            .hex 0e 17 0d 18   ; $c2df: 0e 17 0d 18   Data
-            .hex 26 18 0f 26   ; $c2e3: 26 18 0f 26   Data
-            .hex 0a 16 0e 1b   ; $c2e7: 0a 16 0e 1b   Data
-            .hex 12 0c 0a 26   ; $c2eb: 12 0c 0a 26   Data
-            .hex 12 17 0c 25   ; $c2ef: 12 17 0c 25   Data
+            ; TAITO Logo (3 lines)
+__c2a6:     .hex e9 ea
+__c2a8:     .hex eb ec ed ee ef f0 f1
+__c2af:     .hex f2 f3 f4 f5 f6 f7 f8
+
+            ;    (c)    1  9  8  8     T  A  I  T  O     A  M  E  R  I  C  A     C  O  R  P  .
+__c2b6:     .hex 24 26 01 09 08 08 26 1d 0a 12 1d 18 26 0a 16 0e 1b 12 0c 0a 26 0c 18 1b 19 25
+
+            ;     L  I  C  E  N  S  E  D     B  Y
+__c2d0:     .hex 15 12 0c 0e 17 1c 0e 0d 26 0b 22
+
+            ;     N  I  N  T   E  N  D  O     O  F     A  M  E  R  I  C  A     I  N  C  .
+__c2db:     .hex 17 12 17 1d  0e 17 0d 18 26 18 0f 26 0a 16 0e 1b 12 0c 0a 26 12 17 0c 25
 
 ;-------------------------------------------------------------------------------
 __c2f3:     lda #$d0           ; $c2f3: a9 d0
@@ -1215,28 +1207,33 @@ __c925:     lda __c976,x       ; $c925: bd 76 c9
             rts                ; $c92f: 60
 
 ;-------------------------------------------------------------------------------
-__c930:     .hex 1c 1e 19 0e   ; $c930: 1c 1e 19 0e   Data
-            .hex 1b            ; $c934: 1b            Data
-__c935:     .hex 01 19         ; $c935: 01 19         Data
-__c937:     .hex 02 19         ; $c937: 02 19         Data
-__c939:     .hex 1c 1d 0a 1b   ; $c939: 1c 1d 0a 1b   Data
-            .hex 1d            ; $c93d: 1d            Data
-__c93e:     .hex 0c 18 17 1d   ; $c93e: 0c 18 17 1d   Data
-            .hex 12 17 1e 0e   ; $c942: 12 17 1e 0e   Data
-            .hex 26 26 1b 18   ; $c946: 26 26 1b 18   Data
-            .hex 1e 17 0d      ; $c94a: 1e 17 0d      Data
-__c94d:     .hex 0b 1e 0b 0b   ; $c94d: 0b 1e 0b 0b   Data
-            .hex 15 0e 26 0b   ; $c951: 15 0e 26 0b   Data
-            .hex 18 0b 0b 15   ; $c955: 18 0b 0b 15   Data
-            .hex 0e            ; $c959: 0e            Data
-__c95a:     .hex 19 0a 1c 1c   ; $c95a: 19 0a 1c 1c   Data
-            .hex 20 18 1b 0d   ; $c95e: 20 18 1b 0d   Data
-__c962:     .hex 10 0a 16 0e   ; $c962: 10 0a 16 0e   Data
-            .hex 26 18 1f 0e   ; $c966: 26 18 1f 0e   Data
-            .hex 1b            ; $c96a: 1b            Data
-__c96b:     .hex 26 26 26 26   ; $c96b: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $c96f: 26 26 26 26   Data
-            .hex 26 26 26      ; $c973: 26 26 26      Data
+            ;     S  U  P  E  R
+__c930:     .hex 1c 1e 19 0e 1b
+
+            ;     1  P
+__c935:     .hex 01 19
+
+            ;     2  P
+__c937:     .hex 02 19
+
+            ;     S  T  A  R  T
+__c939:     .hex 1c 1d 0a 1b 1d
+
+            ;     C  O  N  T  I  N  U  E        R  O  U  N  D
+__c93e:     .hex 0c 18 17 1d 12 17 1e 0e 26 26 1b 18 1e 17 0d
+
+            ;     B  U  B  B  L  E     B  O  B  B  L  E
+__c94d:     .hex 0b 1e 0b 0b 15 0e 26 0b 18 0b 0b 15 0e
+
+            ;     P  A  S  S  W  O  R  D
+__c95a:     .hex 19 0a 1c 1c 20 18 1b 0d
+
+            ;     G  A  M  E     O  V  E  R
+__c962:     .hex 10 0a 16 0e 26 18 1f 0e 1b
+
+            ; Background for NICE 1UP and flashing GAME OVER?
+__c96b:     .hex 26 26 26 26 26 26 26 26 26 26 26
+
 __c976:     .hex 39 26 03 42   ; $c976: 39 26 03 42   Data
             .hex 39 28 03 4a   ; $c97a: 39 28 03 4a   Data
 
@@ -1492,34 +1489,20 @@ __cb53:     lda #$01           ; $cb53: a9 01
             jmp __c3cb         ; $cb6f: 4c cb c3
 
 ;-------------------------------------------------------------------------------
-__cb72:     .hex 17 18 20 26   ; $cb72: 17 18 20 26   Data
-            .hex 12 1d 26 12   ; $cb76: 12 1d 26 12   Data
-            .hex 1c 26 1d 11   ; $cb7a: 1c 26 1d 11   Data
-            .hex 0e 26 0b 0e   ; $cb7e: 0e 26 0b 0e   Data
-            .hex 10 12 17 17   ; $cb82: 10 12 17 17   Data
-            .hex 12 17 10 26   ; $cb86: 12 17 10 26   Data
-            .hex 18 0f         ; $cb8a: 18 0f         Data
-__cb8c:     .hex 0a 26 0f 0a   ; $cb8c: 0a 26 0f 0a   Data
-            .hex 17 1d 0a 1c   ; $cb90: 17 1d 0a 1c   Data
-            .hex 1d 12 0c 26   ; $cb94: 1d 12 0c 26   Data
-            .hex 1c 1d 18 1b   ; $cb98: 1c 1d 18 1b   Data
-            .hex 22 25 26 15   ; $cb9c: 22 25 26 15   Data
-            .hex 0e 1d 26 1e   ; $cba0: 0e 1d 26 1e   Data
-            .hex 1c            ; $cba4: 1c            Data
-__cba5:     .hex 16 0a 14 0e   ; $cba5: 16 0a 14 0e   Data
-            .hex 26 0a 26 13   ; $cba9: 26 0a 26 13   Data
-            .hex 18 1e 1b 17   ; $cbad: 18 1e 1b 17   Data
-            .hex 0e 22 26 1d   ; $cbb1: 0e 22 26 1d   Data
-            .hex 18            ; $cbb5: 18            Data
-__cbb6:     .hex 1d 11 0e 26   ; $cbb6: 1d 11 0e 26   Data
-            .hex 0c 0a 1f 0e   ; $cbba: 0c 0a 1f 0e   Data
-            .hex 26 18 0f 26   ; $cbbe: 26 18 0f 26   Data
-            .hex 16 18 17 1c   ; $cbc2: 16 18 17 1c   Data
-            .hex 1d 0e 1b 1c   ; $cbc6: 1d 0e 1b 1c   Data
-            .hex 25            ; $cbca: 25            Data
-__cbcb:     .hex 10 18 18 0d   ; $cbcb: 10 18 18 0d   Data
-            .hex 26 15 1e 0c   ; $cbcf: 26 15 1e 0c   Data
-            .hex 14 25         ; $cbd3: 14 25         Data
+            ;     N  O  W     I  T     I  S     T  H  E     B  E  G  I  N  N  I  N  G     O  F
+__cb72:     .hex 17 18 20 26 12 1d 26 12 1c 26 1d 11 0e 26 0b 0e 10 12 17 17 12 17 10 26 18 0f
+
+            ;     A     F  A  N  T  A  S  T  I  C     S  T  O  R  Y  !     L  E  T     U  S
+__cb8c:     .hex 0a 26 0f 0a 17 1d 0a 1c 1d 12 0c 26 1c 1d 18 1b 22 25 26 15 0e 1d 26 1e 1c
+
+            ;     M  A  K  E     A     J  O  U  R  N  E  Y     T  O
+__cba5:     .hex 16 0a 14 0e 26 0a 26 13 18 1e 1b 17 0e 22 26 1d 18
+
+            ;     T  H  E     C  A  V  E     O  F     M  O  N  S  T  E  R  S  !
+__cbb6:     .hex 1d 11 0e 26 0c 0a 1f 0e 26 18 0f 26 16 18 17 1c 1d 0e 1b 1c 25
+
+            ;     G  O  O  D     L  U  C  K  !
+__cbcb:     .hex 10 18 18 0d 26 15 1e 0c 14 25
 
 ;-------------------------------------------------------------------------------
 __cbd5:     lda $0401          ; $cbd5: ad 01 04
@@ -4164,7 +4147,7 @@ __df54:     lda $02,x          ; $df54: b5 02
             tax                ; $df59: aa
             lda __df81,x       ; $df5a: bd 81 df
             sta $0201,y        ; $df5d: 99 01 02
-            lda __df82,x       ; $df60: bd 82 df
+            lda __df81+1,x     ; $df60: bd 82 df
             sta $0205,y        ; $df63: 99 05 02
             cmp $0201,y        ; $df66: d9 01 02
             bne __df76         ; $df69: d0 0b
@@ -4182,10 +4165,9 @@ __df76:     lda $0206,y        ; $df76: b9 06 02
             rts                ; $df80: 60
 
 ;-------------------------------------------------------------------------------
-__df81:     .hex 20            ; $df81: 20            Data
-__df82:     .hex 20 22 22 24   ; $df82: 20 22 22 24   Data
-            .hex 24 26 28 2a   ; $df86: 24 26 28 2a   Data
-            .hex 2a 2c 2e      ; $df8a: 2a 2c 2e      Data
+__df81:     .hex 20 20 22 22   ; $df82: 20 20 22 22   Data
+            .hex 24 24 26 28   ; $df86: 24 24 26 28   Data
+            .hex 2a 2a 2c 2e   ; $df8a: 2a 2a 2c 2e   Data
 
 ;-------------------------------------------------------------------------------
 __df8d:     jsr __dfdf         ; $df8d: 20 df df
@@ -6511,9 +6493,19 @@ __f08f:     sta $0203,y        ; $f08f: 99 03 02
             jmp __dbab         ; $f09a: 4c ab db
 
 ;-------------------------------------------------------------------------------
-__f09d:     .hex 29 02 2d 03   ; $f09d: 29 02 2d 03   Data
-            .hex 31 03 29 03   ; $f0a1: 31 03 29 03   Data
-            .hex 35 02 39 02   ; $f0a5: 35 02 39 02   Data
+            ;    E bubble
+__f09d:     .hex 29 02
+            ;    X bubble
+            .hex 2d 03
+            ;    T bubble
+            .hex 31 03
+            ;    E bubble
+            .hex 29 03
+            ;    N bubble
+            .hex 35 02
+            ;    D bubble
+            .hex 39 02
+
             .hex 30 03 36 01   ; $f0a9: 30 03 36 01   Data
             .hex 3e 02         ; $f0ad: 3e 02         Data
 
@@ -6644,9 +6636,8 @@ __f18f:     lda #$04           ; $f18f: a9 04
             rts                ; $f19e: 60
 
 ;-------------------------------------------------------------------------------
-__f19f:     .hex 26 17 12 0c   ; $f19f: 26 17 12 0c   Data
-            .hex 0e 26 01 1e   ; $f1a3: 0e 26 01 1e   Data
-            .hex 19 25 26      ; $f1a7: 19 25 26      Data
+            ;        N  I  C  E     1  U  P  !
+__f19f:     .hex 26 17 12 0c 0e 26 01 1e 19 25 26
 
 ;-------------------------------------------------------------------------------
 __f1aa:     lda #$01           ; $f1aa: a9 01
@@ -7858,118 +7849,21 @@ __fab7:     sta SQ1_VOL,x      ; $fab7: 9d 00 40
             rts                ; $facd: 60
 
 ;-------------------------------------------------------------------------------
-__face:     .hex 26 26 26 26   ; $face: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fad2: 26 26 26 26   Data
-            .hex 26 28 29 2a   ; $fad6: 26 28 29 2a   Data
-            .hex 2b 2c 2d 2e   ; $fada: 2b 2c 2d 2e   Data
-            .hex 26 2f 30 31   ; $fade: 26 2f 30 31   Data
-            .hex 26 26 26 26   ; $fae2: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fae6: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $faea: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $faee: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $faf2: 26 26 26 26   Data
-            .hex 26 32 33 e8   ; $faf6: 26 32 33 e8   Data
-            .hex e8 34 35 36   ; $fafa: e8 34 35 36   Data
-            .hex 37 38 e8 39   ; $fafe: 37 38 e8 39   Data
-            .hex 3a 3b 26 26   ; $fb02: 3a 3b 26 26   Data
-            .hex 26 26 26 26   ; $fb06: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fb0a: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fb0e: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fb12: 26 26 26 26   Data
-            .hex 3c 3d 3e 3f   ; $fb16: 3c 3d 3e 3f   Data
-            .hex e8 e8 40 41   ; $fb1a: e8 e8 40 41   Data
-            .hex 42 e8 e8 43   ; $fb1e: 42 e8 e8 43   Data
-            .hex 44 45 46 26   ; $fb22: 44 45 46 26   Data
-            .hex 26 26 26 26   ; $fb26: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fb2a: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fb2e: 26 26 26 26   Data
-            .hex 26 26 26 3c   ; $fb32: 26 26 26 3c   Data
-            .hex 47 48 49 4a   ; $fb36: 47 48 49 4a   Data
-            .hex e8 e8 4b 4c   ; $fb3a: e8 e8 4b 4c   Data
-            .hex 4d 4e 4f 50   ; $fb3e: 4d 4e 4f 50   Data
-            .hex 51 52 53 26   ; $fb42: 51 52 53 26   Data
-            .hex 26 26 26 26   ; $fb46: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fb4a: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fb4e: 26 26 26 26   Data
-            .hex 26 26 26 54   ; $fb52: 26 26 26 54   Data
-            .hex 55 56 57 58   ; $fb56: 55 56 57 58   Data
-            .hex 59 5a 5b 5c   ; $fb5a: 59 5a 5b 5c   Data
-            .hex 5d 5e 5f 60   ; $fb5e: 5d 5e 5f 60   Data
-            .hex 61 62 63 64   ; $fb62: 61 62 63 64   Data
-            .hex 65 26 26 26   ; $fb66: 65 26 26 26   Data
-            .hex 26 26 26 26   ; $fb6a: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fb6e: 26 26 26 26   Data
-            .hex 26 26 26 66   ; $fb72: 26 26 26 66   Data
-            .hex 67 68 69 6a   ; $fb76: 67 68 69 6a   Data
-            .hex 6b 6c 6d 6e   ; $fb7a: 6b 6c 6d 6e   Data
-            .hex 6f 70 71 72   ; $fb7e: 6f 70 71 72   Data
-            .hex 73 74 e8 e8   ; $fb82: 73 74 e8 e8   Data
-            .hex 75 26 26 26   ; $fb86: 75 26 26 26   Data
-            .hex 26 26 26 26   ; $fb8a: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fb8e: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fb92: 26 26 26 26   Data
-            .hex 66 76 77 78   ; $fb96: 66 76 77 78   Data
-            .hex 79 7a 7b 7c   ; $fb9a: 79 7a 7b 7c   Data
-            .hex 7d 7e 7f 80   ; $fb9e: 7d 7e 7f 80   Data
-            .hex 81 82 e8 83   ; $fba2: 81 82 e8 83   Data
-            .hex 84 26 26 26   ; $fba6: 84 26 26 26   Data
-            .hex 26 26 26 26   ; $fbaa: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fbae: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fbb2: 26 26 26 26   Data
-            .hex 26 85 86 87   ; $fbb6: 26 85 86 87   Data
-            .hex 88 89 8a 8b   ; $fbba: 88 89 8a 8b   Data
-            .hex 8c 8d 8e 8f   ; $fbbe: 8c 8d 8e 8f   Data
-            .hex 90 91 e8 92   ; $fbc2: 90 91 e8 92   Data
-            .hex 93 26 26 26   ; $fbc6: 93 26 26 26   Data
-            .hex 26 26 26 26   ; $fbca: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fbce: 26 26 26 26   Data
-            .hex 26 26 26 94   ; $fbd2: 26 26 26 94   Data
-            .hex 95 96 97 98   ; $fbd6: 95 96 97 98   Data
-            .hex 99 9a 9b 9c   ; $fbda: 99 9a 9b 9c   Data
-            .hex 9d 9e 9f a0   ; $fbde: 9d 9e 9f a0   Data
-            .hex a1 a2 e8 a3   ; $fbe2: a1 a2 e8 a3   Data
-            .hex a4 26 26 26   ; $fbe6: a4 26 26 26   Data
-            .hex 26 26 26 26   ; $fbea: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fbee: 26 26 26 26   Data
-            .hex 26 26 26 a5   ; $fbf2: 26 26 26 a5   Data
-            .hex a6 e8 a7 a8   ; $fbf6: a6 e8 a7 a8   Data
-            .hex a9 aa ab ac   ; $fbfa: a9 aa ab ac   Data
-            .hex ad ae af b0   ; $fbfe: ad ae af b0   Data
-            .hex b1 b2 e8 b3   ; $fc02: b1 b2 e8 b3   Data
-            .hex b4 26 26 26   ; $fc06: b4 26 26 26   Data
-            .hex 26 26 26 26   ; $fc0a: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fc0e: 26 26 26 26   Data
-            .hex 26 26 26 b5   ; $fc12: 26 26 26 b5   Data
-            .hex b6 b7 b8 b9   ; $fc16: b6 b7 b8 b9   Data
-            .hex ba bb bc bd   ; $fc1a: ba bb bc bd   Data
-            .hex be bf c0 c1   ; $fc1e: be bf c0 c1   Data
-            .hex c2 e8 c3 c4   ; $fc22: c2 e8 c3 c4   Data
-            .hex c5 26 26 26   ; $fc26: c5 26 26 26   Data
-            .hex 26 26 26 26   ; $fc2a: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fc2e: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fc32: 26 26 26 26   Data
-            .hex c6 c7 e8 c8   ; $fc36: c6 c7 e8 c8   Data
-            .hex c9 e8 ca cb   ; $fc3a: c9 e8 ca cb   Data
-            .hex cc cd ce cf   ; $fc3e: cc cd ce cf   Data
-            .hex d0 d1 d2 26   ; $fc42: d0 d1 d2 26   Data
-            .hex d3 26 26 26   ; $fc46: d3 26 26 26   Data
-            .hex 26 26 26 26   ; $fc4a: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fc4e: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fc52: 26 26 26 26   Data
-            .hex d4 d5 d6 d7   ; $fc56: d4 d5 d6 d7   Data
-            .hex d8 d9 da db   ; $fc5a: d8 d9 da db   Data
-            .hex dc dd de df   ; $fc5e: dc dd de df   Data
-            .hex e0 e1 e2 26   ; $fc62: e0 e1 e2 26   Data
-            .hex 26 26 26 26   ; $fc66: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fc6a: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fc6e: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fc72: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fc76: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fc7a: 26 26 26 26   Data
-            .hex 26 e3 e4 e5   ; $fc7e: 26 e3 e4 e5   Data
-            .hex e6 e7 26 26   ; $fc82: e6 e7 26 26   Data
-            .hex 26 26 26 26   ; $fc86: 26 26 26 26   Data
-            .hex 26 26 26 26   ; $fc8a: 26 26 26 26   Data
+            ; Bubble Bobble logo (14 lines)
+__face:     .hex 26 26 26 26 26 26 26 26 26 28 29 2a 2b 2c 2d 2e 26 2f 30 31 26 26 26 26 26 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 26 26 32 33 e8 e8 34 35 36 37 38 e8 39 3a 3b 26 26 26 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 26 3c 3d 3e 3f e8 e8 40 41 42 e8 e8 43 44 45 46 26 26 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 3c 47 48 49 4a e8 e8 4b 4c 4d 4e 4f 50 51 52 53 26 26 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 54 55 56 57 58 59 5a 5b 5c 5d 5e 5f 60 61 62 63 64 65 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 66 67 68 69 6a 6b 6c 6d 6e 6f 70 71 72 73 74 e8 e8 75 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 26 66 76 77 78 79 7a 7b 7c 7d 7e 7f 80 81 82 e8 83 84 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 26 26 85 86 87 88 89 8a 8b 8c 8d 8e 8f 90 91 e8 92 93 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 94 95 96 97 98 99 9a 9b 9c 9d 9e 9f a0 a1 a2 e8 a3 a4 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 a5 a6 e8 a7 a8 a9 aa ab ac ad ae af b0 b1 b2 e8 b3 b4 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 b5 b6 b7 b8 b9 ba bb bc bd be bf c0 c1 c2 e8 c3 c4 c5 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 26 c6 c7 e8 c8 c9 e8 ca cb cc cd ce cf d0 d1 d2 26 d3 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 26 d4 d5 d6 d7 d8 d9 da db dc dd de df e0 e1 e2 26 26 26 26 26 26 26 26 26
+            .hex 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 e3 e4 e5 e6 e7 26 26 26 26 26 26 26 26 26 26
 
 ;-------------------------------------------------------------------------------
 __fc8e:     jsr __fcf3         ; $fc8e: 20 f3 fc
@@ -8010,9 +7904,9 @@ __fccd:     lda #$21           ; $fccd: a9 21
             rts                ; $fcd8: 60
 
 ;-------------------------------------------------------------------------------
-__fcd9:     .hex 19 1e 1c 11   ; $fcd9: 19 1e 1c 11   Data
-            .hex 26 1c 1d 0a   ; $fcdd: 26 1c 1d 0a   Data
-            .hex 1b 1d         ; $fce1: 1b 1d         Data
+            ;     P  U  S  H     S  T  A  R  T
+__fcd9:     .hex 19 1e 1c 11 26 1c 1d 0a 1b 1d
+
 __fce3:     .hex ff 30 30 30   ; $fce3: ff 30 30 30   Data
             .hex ff 30 30 30   ; $fce7: ff 30 30 30   Data
             .hex ff 30 30 30   ; $fceb: ff 30 30 30   Data
@@ -8120,8 +8014,8 @@ __fdab:     lda #$22           ; $fdab: a9 22
             rts                ; $fdc1: 60
 
 ;-------------------------------------------------------------------------------
-__fdc2:     .hex 19 0a 1c 1c   ; $fdc2: 19 0a 1c 1c   Data
-            .hex 20 18 1b 0d   ; $fdc6: 20 18 1b 0d   Data
+            ;     P  A  S  S  W  O  R  D
+__fdc2:     .hex 19 0a 1c 1c 20 18 1b 0d
 
 ;-------------------------------------------------------------------------------
 __fdca:     lda #$b3           ; $fdca: a9 b3
@@ -8293,9 +8187,10 @@ __feda:     .hex 8c fe 70 fe   ; $feda: 8c fe 70 fe   Data
             .hex 60 fe 52 fe   ; $fede: 60 fe 52 fe   Data
             .hex a8 fe ab fe   ; $fee2: a8 fe ab fe   Data
             .hex ae fe ae fe   ; $fee6: ae fe ae fe   Data
-__feea:     .hex e8 27 e8 27   ; $feea: e8 27 e8 27   Data
-            .hex e8 27 e8 27   ; $feee: e8 27 e8 27   Data
-            .hex e8            ; $fef2: e8            Data
+
+            ; Password prompt
+__feea:     .hex e8 27 e8 27 e8 27 e8 27 e8
+
 __fef3:     ldx #$05           ; $fef3: a2 05
 __fef5:     lda $0501,x        ; $fef5: bd 01 05
             ldy #$00           ; $fef8: a0 00

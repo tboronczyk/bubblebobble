@@ -583,7 +583,7 @@ __83fa:     .hex fe fe ff ff   ; $83fa: fe fe ff ff   Data
             .hex 00 ff 00 ff   ; $8402: 00 ff 00 ff   Data
             .hex 00 ff 00 ff   ; $8406: 00 ff 00 ff   Data
             .hex 00 ff 00 ff   ; $840a: 00 ff 00 ff   Data
-            .hex 80
+            .hex 80            ; $840e: 80            Data
 __840f:     .hex fc fe fe fe   ; $840f: fc fe fe fe   Data
             .hex ff ff ff ff   ; $8413: ff ff ff ff   Data
             .hex ff ff 80      ; $8417: ff ff 80      Data
@@ -592,7 +592,7 @@ __841a:     .hex ff 00 ff ff   ; $841a: ff 00 ff ff   Data
             .hex 00 ff 00 00   ; $8422: 00 ff 00 00   Data
             .hex ff 00 00 ff   ; $8426: ff 00 00 ff   Data
             .hex 00 00 00 00   ; $842a: 00 00 00 00   Data
-            .hex 80 
+            .hex 80            ; $842e: 80            Data
 __842f:     .hex ff fe ff ff   ; $842f: ff fe ff ff   Data
             .hex ff ff 00 ff   ; $8433: ff ff 00 ff   Data
             .hex 00 00 80      ; $8437: 00 00 80      Data
@@ -1643,6 +1643,7 @@ __8b56:     lda $c5            ; $8b56: a5 c5
             sta $21            ; $8b62: 85 21
             lda #$6c           ; $8b64: a9 6c
             sta $22            ; $8b66: 85 22
+            ; first 4 sprites of Hurry!
             lda #$ea           ; $8b68: a9 ea
             ldx #$04           ; $8b6a: a2 04
             jsr __8b8c         ; $8b6c: 20 8c 8b
@@ -1653,6 +1654,7 @@ __8b72:     lda $0200,y        ; $8b72: b9 00 02
             sta $21            ; $8b75: 85 21
             lda #$8c           ; $8b77: a9 8c
             sta $22            ; $8b79: 85 22
+            ; last (5th) sprite of Hurry!
             lda #$f2           ; $8b7b: a9 f2
             ldx #$01           ; $8b7d: a2 01
             jsr __8b8c         ; $8b7f: 20 8c 8b
@@ -2039,8 +2041,8 @@ __8e0c:     sta $22            ; $8e0c: 85 22
             beq __8e2c         ; $8e12: f0 18
             lda $0203,y        ; $8e14: b9 03 02
             cmp $22            ; $8e17: c5 22
-            beq __8e54         ; $8e19: f0 39
-            bcc __8e25         ; $8e1b: 90 08
+            beq _x8e54         ; $8e19: f0 39
+            bcc _x8e25         ; $8e1b: 90 08
             lda $00,x          ; $8e1d: b5 00
             and #$fb           ; $8e1f: 29 fb
             jmp __8e29         ; $8e21: 4c 29 8e
@@ -2049,7 +2051,7 @@ __8e0c:     sta $22            ; $8e0c: 85 22
             rts                ; $8e24: 60
 
 ;-------------------------------------------------------------------------------
-__8e25:     lda $00,x          ; $8e25: b5 00
+_x8e25:     lda $00,x          ; $8e25: b5 00
             ora #$04           ; $8e27: 09 04
 __8e29:     sta $00,x          ; $8e29: 95 00
             rts                ; $8e2b: 60
@@ -2063,7 +2065,7 @@ __8e2c:     lda $0200,y        ; $8e2c: b9 00 02
             sec                ; $8e36: 38
             sbc $0200,y        ; $8e37: f9 00 02
             sta $21            ; $8e3a: 85 21
-            beq __8e54         ; $8e3c: f0 16
+            beq _x8e54         ; $8e3c: f0 16
             bpl __8e43         ; $8e3e: 10 03
             jmp __8e4d         ; $8e40: 4c 4d 8e
 
@@ -2082,7 +2084,7 @@ __8e51:     sta $00,x          ; $8e51: 95 00
             rts                ; $8e53: 60
 
 ;-------------------------------------------------------------------------------
-__8e54:     lda #$18           ; $8e54: a9 18
+_x8e54:     lda #$18           ; $8e54: a9 18
             sta $01,x          ; $8e56: 95 01
             rts                ; $8e58: 60
 
@@ -2106,7 +2108,7 @@ __8e62:     lda $00,x          ; $8e62: b5 00
 __8e76:     jsr __8d5e         ; $8e76: 20 5e 8d
             inc $21            ; $8e79: e6 21
 __8e7b:     lda $01,x          ; $8e7b: b5 01
-            beq __8ebb         ; $8e7d: f0 3c
+            beq _x8ebb         ; $8e7d: f0 3c
             cmp #$08           ; $8e7f: c9 08
             beq __8eaa         ; $8e81: f0 27
             cmp #$10           ; $8e83: c9 10
@@ -2144,7 +2146,7 @@ __8eb0:     sta $0201,y        ; $8eb0: 99 01 02
             jmp __8f41         ; $8eb8: 4c 41 8f
 
 ;-------------------------------------------------------------------------------
-__8ebb:     lda $21            ; $8ebb: a5 21
+_x8ebb:     lda $21            ; $8ebb: a5 21
             bne __8ed5         ; $8ebd: d0 16
             lda #$18           ; $8ebf: a9 18
             sta $01,x          ; $8ec1: 95 01
@@ -2171,16 +2173,16 @@ __8ed5:     lda $04a0          ; $8ed5: ad a0 04
             pla                ; $8ee5: 68
             tay                ; $8ee6: a8
 __8ee7:     cpy #$58           ; $8ee7: c0 58
-            bne __8ef8         ; $8ee9: d0 0d
+            bne _x8ef8         ; $8ee9: d0 0d
             lda $c7            ; $8eeb: a5 c7
             and #$80           ; $8eed: 29 80
             beq __8f02         ; $8eef: f0 11
             lda #$05           ; $8ef1: a9 05
             sta $c4            ; $8ef3: 85 c4
-            jmp __8f09         ; $8ef5: 4c 09 8f
+            jmp _x8f09         ; $8ef5: 4c 09 8f
 
 ;-------------------------------------------------------------------------------
-__8ef8:     lda $c4            ; $8ef8: a5 c4
+_x8ef8:     lda $c4            ; $8ef8: a5 c4
             and #$80           ; $8efa: 29 80
             bne __8f02         ; $8efc: d0 04
             lda #$03           ; $8efe: a9 03
@@ -2188,7 +2190,7 @@ __8ef8:     lda $c4            ; $8ef8: a5 c4
 __8f02:     jsr __eb8e         ; $8f02: 20 8e eb
             lda #$03           ; $8f05: a9 03
             sta $00,x          ; $8f07: 95 00
-__8f09:     lda #$00           ; $8f09: a9 00
+_x8f09:     lda #$00           ; $8f09: a9 00
             sta $01,x          ; $8f0b: 95 01
             lda #$f4           ; $8f0d: a9 f4
             sta $0200,y        ; $8f0f: 99 00 02
@@ -3991,16 +3993,18 @@ __9c4a:     lda #$80           ; $9c4a: a9 80
 __9c4c:     .hex 60 70 42 8c   ; $9c4c: 60 70 42 8c   Data
             .hex a0 68 02 8c   ; $9c50: a0 68 02 8c   Data
             .hex a0            ; $9c54: a0            Data
-__9c55:     .hex 1d 11 0e 26   ; $9c55: 1d 11 0e 26   Data
-            .hex 0d 18 18 1b   ; $9c59: 0d 18 18 1b   Data
-            .hex 26 20 0a 1c   ; $9c5d: 26 20 0a 1c   Data
-__9c61:     .hex 18 19 0e 17   ; $9c61: 18 19 0e 17   Data
-            .hex 0e 0d         ; $9c65: 0e 0d         Data
-__9c67:     .hex 10 18 26 1d   ; $9c67: 10 18 26 1d   Data
-            .hex 18 26 1c 0e   ; $9c6b: 18 26 1c 0e   Data
-            .hex 0c 1b 0e 1d   ; $9c6f: 0c 1b 0e 1d   Data
-__9c73:     .hex 1b 18 0a 0d   ; $9c73: 1b 18 0a 0d   Data
-            .hex 25            ; $9c77: 25            Data
+
+            ;     T  H  E     D  O  O  R     W  A  S
+__9c55:     .hex 1d 11 0e 26 0d 18 18 1b 26 20 0a 1c
+
+            ;     O  P  E  N  E  D
+__9c61:     .hex 18 19 0e 17 0e 0d
+
+            ;     G  O     T  O     S  E  C  R  E  T
+__9c67:     .hex 10 18 26 1d 18 26 1c 0e 0c 1b 0e 1d
+
+            ;     R  O  A  D  !
+__9c73:     .hex 1b 18 0a 0d 25
 
 ;-------------------------------------------------------------------------------
 __9c78:     lda #$01           ; $9c78: a9 01
