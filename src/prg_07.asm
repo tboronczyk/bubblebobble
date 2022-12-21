@@ -1141,7 +1141,7 @@ __c88f:     lda #$01           ; $c88f: a9 01
             .db <__c935, >__c935
             lda #$21           ; $c89f: a9 21
             ldx #$0e           ; $c8a1: a2 0e
-            ldy #$05           ; $c8a3: a0 05
+            ldy #$07
             jsr __fa04         ; $c8a5: 20 04 fa
             .db <__c939, >__c939
             lda #$21           ; $c8aa: a9 21
@@ -1151,7 +1151,7 @@ __c88f:     lda #$01           ; $c88f: a9 01
             .db <__c937, >__c937
             lda #$21           ; $c8b5: a9 21
             ldx #$6e           ; $c8b7: a2 6e
-            ldy #$05           ; $c8b9: a0 05
+            ldy #$07
             jsr __fa04         ; $c8bb: 20 04 fa
             .db <__c939, >__c939
             lda #$01           ; $c8c0: a9 01
@@ -1208,28 +1208,28 @@ __c925:     lda __c976,x       ; $c925: bd 76 c9
 
 ;-------------------------------------------------------------------------------
             ;     S  U  P  E  R
-__c930:     .hex 1c 1e 19 0e 1b
+__c930:     .hex 1d 1f 1b 0f 1c
 
-            ;     1  P
-__c935:     .hex 01 19
+            ;     1  L
+__c935:     .hex 01 17
 
-            ;     2  P
-__c937:     .hex 02 19
+            ;     2  L
+__c937:     .hex 02 17
 
-            ;     S  T  A  R  T
-__c939:     .hex 1c 1d 0a 1b 1d
+            ;     K  O  M  E  N  C  I
+__c939:     .hex 16 1a 18 0f 19 0c 14
 
-            ;     C  O  N  T  I  N  U  E        R  O  U  N  D
-__c93e:     .hex 0c 18 17 1d 12 17 1e 0e 26 26 1b 18 1e 17 0d
+            ;     D  A UX  R  I  G  I     N  I  V  E  L  O  N
+__c93e:     .hex 0e 0a 21 1c 14 11 14 26 19 14 20 0f 17 1a 19
 
             ;     B  U  B  B  L  E     B  O  B  B  L  E
-__c94d:     .hex 0b 1e 0b 0b 15 0e 26 0b 18 0b 0b 15 0e
+__c94d:     .hex 0b 1f 0b 0b 17 0f 26 0b 1a 0b 0b 17 0f
 
-            ;     P  A  S  S  W  O  R  D
-__c95a:     .hex 19 0a 1c 1c 20 18 1b 0d
+            ;     P  A  S  V  O  R  T  O
+__c95a:     .hex 1b 0a 1d 20 1a 1c 1e 1a
 
-            ;     G  A  M  E     O  V  E  R
-__c962:     .hex 10 0a 16 0e 26 18 1f 0e 1b
+            ;     L  U  D  F  I  N  O
+__c962:     .hex 17 1f 0e 10 14 19 1a
 
             ; Background for NICE 1UP and flashing GAME OVER?
 __c96b:     .hex 26 26 26 26 26 26 26 26 26 26 26
@@ -1399,7 +1399,7 @@ __ca9d:     ldx $86            ; $ca9d: a6 86
 __caa4:     stx $86            ; $caa4: 86 86
             txa                ; $caa6: 8a
             ldy #$22           ; $caa7: a0 22
-            ldx #$3a           ; $caa9: a2 3a
+            ldx #$39
             jsr __c4e9         ; $caab: 20 e9 c4
             jmp __ca67         ; $caae: 4c 67 ca
 
@@ -7889,8 +7889,8 @@ __fcab:     lda #$01           ; $fcab: a9 01
 
 ;-------------------------------------------------------------------------------
 __fcbc:     lda #$21           ; $fcbc: a9 21
-            ldx #$ac           ; $fcbe: a2 ac
-            ldy #$09           ; $fcc0: a0 09
+            ldx #$ad
+            ldy #$07
             jsr __fa04         ; $fcc2: 20 04 fa
             .db <__c962, >__c962
 __fcc7:     lda $f7            ; $fcc7: a5 f7
