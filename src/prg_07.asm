@@ -1489,20 +1489,20 @@ __cb53:     lda #$01           ; $cb53: a9 01
             jmp __c3cb         ; $cb6f: 4c cb c3
 
 ;-------------------------------------------------------------------------------
-            ;     N  O  W     I  T     I  S     T  H  E     B  E  G  I  N  N  I  N  G     O  F
-__cb72:     .hex 17 18 20 26 12 1d 26 12 1c 26 1d 11 0e 26 0b 0e 10 12 17 17 12 17 10 26 18 0f
+            ;     N  U  N     K  O  M  E  N  C  I GX  A  S     M  I  R  I  N  D  A
+__cb72:     .hex 19 1f 19 26 16 1a 18 0f 19 0c 14 12 0a 1d 26 18 14 1c 14 19 0e 0a
 
-            ;     A     F  A  N  T  A  S  T  I  C     S  T  O  R  Y  !     L  E  T     U  S
-__cb8c:     .hex 0a 26 0f 0a 17 1d 0a 1c 1d 12 0c 26 1c 1d 18 1b 22 25 26 15 0e 1d 26 1e 1c
+            ;     H  I  S  T  O  R  I  O  !     N  I     V  O  J  A GX  U     T  R  A     L  A
+__cb8c:     .hex 13 14 1d 1e 1a 1c 14 1a 25 26 19 14 26 20 1a 15 0a 12 1f 26 1e 1c 0a 26 17 0a
 
-            ;     M  A  K  E     A     J  O  U  R  N  E  Y     T  O
-__cba5:     .hex 16 0a 14 0e 26 0a 26 13 18 1e 1b 17 0e 22 26 1d 18
+            ;     K  A  V  E  R  N  O     D  E     L  A     M  O  N  S  T  R  O  J  !
+__cba5:     .hex 16 0a 20 0f 1c 19 1a 26 0e 0f 26 17 0a 26 18 1a 19 1d 1e 1c 1a 15 25
 
-            ;     T  H  E     C  A  V  E     O  F     M  O  N  S  T  E  R  S  !
-__cbb6:     .hex 1d 11 0e 26 0c 0a 1f 0e 26 18 0f 26 16 18 17 1c 1d 0e 1b 1c 25
+            ;     B  O  N SX  A  N  C  O  N  !
+__cbb6:     .hex 0b 1a 19 22 0a 19 0c 1a 19 25
 
-            ;     G  O  O  D     L  U  C  K  !
-__cbcb:     .hex 10 18 18 0d 26 15 1e 0c 14 25
+            ; 18 bytes
+            .pad $cbd5
 
 ;-------------------------------------------------------------------------------
 __cbd5:     lda $0401          ; $cbd5: ad 01 04
@@ -1524,32 +1524,31 @@ __cbdb:     tya                ; $cbdb: 98
             lda #$01           ; $cbeb: a9 01
             jsr __cee3         ; $cbed: 20 e3 ce
             lda #$28           ; $cbf0: a9 28
-            ldx #$42           ; $cbf2: a2 42
-            ldy #$1a           ; $cbf4: a0 1a
+            ldx #$44
+            ldy #$16
             jsr __fa04         ; $cbf6: 20 04 fa
             .db <__cb72, >__cb72
             lda #$28           ; $cbfb: a9 28
-            ldx #$83           ; $cbfd: a2 83
-            ldy #$19           ; $cbff: a0 19
+            ldx #$82
+            ldy #$1a
             jsr __fa04         ; $cc01: 20 04 fa
             .db <__cb8c, >__cb8c
             lda #$01           ; $cc06: a9 01
             jsr __cee3         ; $cc08: 20 e3 ce
             lda #$28           ; $cc0b: a9 28
-            ldx #$c7           ; $cc0d: a2 c7
-            ldy #$11           ; $cc0f: a0 11
+            ldx #$c4
+            ldy #$17
             jsr __fa04         ; $cc11: 20 04 fa
             .db <__cba5, >__cba5
             lda #$29           ; $cc16: a9 29
-            ldx #$05           ; $cc18: a2 05
-            ldy #$15           ; $cc1a: a0 15
+            ldx #$4a
+            ldy #$0a
             jsr __fa04         ; $cc1c: 20 04 fa
             .db <__cbb6, >__cbb6
-            lda #$29           ; $cc21: a9 29
-            ldx #$6a           ; $cc23: a2 6a
-            ldy #$0a           ; $cc25: a0 0a
-            jsr __fa04         ; $cc27: 20 04 fa
-            .db <__cbcb, >__cbcb
+
+            ; NOP 11 bytes
+            .pad $cc2c, $ea
+
             lda #$00           ; $cc2c: a9 00
             sta $0452          ; $cc2e: 8d 52 04
             lda #$c8           ; $cc31: a9 c8
