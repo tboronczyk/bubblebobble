@@ -309,7 +309,7 @@ __c205:     lda #$01           ; $c205: a9 01
             .db <__c2b6, >__c2b6
             lda #$23           ; $c242: a9 23
             ldx #$0a           ; $c244: a2 0a
-            ldy #$0b           ; $c246: a0 0b
+            ldy #$0c
             jsr __fa04         ; $c248: 20 04 fa
             .db <__c2d0, >__c2d0
             lda #$23           ; $c24d: a9 23
@@ -363,13 +363,13 @@ __c2a8:     .hex eb ec ed ee ef f0 f1
 __c2af:     .hex f2 f3 f4 f5 f6 f7 f8
 
             ;    (c)    1  9  8  8     T  A  I  T  O     A  M  E  R  I  C  A     C  O  R  P  .
-__c2b6:     .hex 24 26 01 09 08 08 26 1d 0a 12 1d 18 26 0a 16 0e 1b 12 0c 0a 26 0c 18 1b 19 25
+__c2b6:     .hex 24 26 01 09 08 08 26 1e 0a 14 1e 1a 26 0a 18 0f 1c 14 0c 0a 26 0c 1a 1c 1b 25
 
-            ;     L  I  C  E  N  S  E  D     B  Y
-__c2d0:     .hex 15 12 0c 0e 17 1c 0e 0d 26 0b 22
+            ;     N  I  N  T  E  N  D  O     O  F     A  M  E  R  I  C  A     I  N  C  .
+__c2db:     .hex 19 14 19 1e 0f 19 0e 1a 26 1a 10 26 0a 18 0f 1c 14 0c 0a 26 14 19 0c 25
 
-            ;     N  I  N  T   E  N  D  O     O  F     A  M  E  R  I  C  A     I  N  C  .
-__c2db:     .hex 17 12 17 1d  0e 17 0d 18 26 18 0f 26 0a 16 0e 1b 12 0c 0a 26 12 17 0c 25
+            ; 11 bytes
+            .pad $c2f3
 
 ;-------------------------------------------------------------------------------
 __c2f3:     lda #$d0           ; $c2f3: a9 d0
@@ -8280,9 +8280,9 @@ __ff9d:     lda $050b,x        ; $ff9d: bd 0b 05
             jmp __fddc         ; $ffa6: 4c dc fd
 
 ;-------------------------------------------------------------------------------
-            .hex ff ff ff ff   ; $ffa9: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffad: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffb1: ff ff ff ff   Data
+            ;     L  I  C  E  N  C  I  T  A     D  E
+__c2d0:     .hex 17 14 0c 0f 19 0c 14 1e 0a 26 0e 0f
+
             .hex ff ff ff ff   ; $ffb5: ff ff ff ff   Data
             .hex ff ff ff ff   ; $ffb9: ff ff ff ff   Data
             .hex ff ff ff ff   ; $ffbd: ff ff ff ff   Data
