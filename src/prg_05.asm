@@ -1345,7 +1345,7 @@ __8a78:     tya                ; $8a78: 98
             lda #$01           ; $8a8d: a9 01
             jsr __cee3         ; $8a8f: 20 e3 ce
             jsr __8f83         ; $8a92: 20 83 8f
-            lda #$6c           ; $8a95: a9 6c
+            lda #$70
             sta $0498          ; $8a97: 8d 98 04
             lda #$00           ; $8a9a: a9 00
             sta $0499          ; $8a9c: 8d 99 04
@@ -1513,7 +1513,7 @@ __8bd9:     clc                ; $8bd9: 18
 __8bde:     lda $046c          ; $8bde: ad 6c 04
             bne __8bf9         ; $8be1: d0 16
             lda #$20           ; $8be3: a9 20
-            ldx #$28           ; $8be5: a2 28
+            ldx #$29
             ldy #$08           ; $8be7: a0 08
             jsr __fa04         ; $8be9: 20 04 fa
             .db <__8bfa, >__8bfa
@@ -1525,106 +1525,123 @@ __8bde:     lda $046c          ; $8bde: ad 6c 04
 __8bf9:     rts                ; $8bf9: 60
 
 ;-------------------------------------------------------------------------------
-            ;     P  A  S  S  W  O  R  D
-__8bfa:     .hex 19 0a 1c 1c 20 18 1b 0d
+            ;     P  A  S  V  O  R  T  O
+__8bfa:     .hex 1b 0a 1d 20 1a 1c 1e 1a
 
-            ;     B  B  A  J  I
+            ;     B  B  A  H GX (was BBAJI)
 __8c02:     .hex 0b 0b 0a 13 12
 
-__8c07:     .hex 00 00 00 00   ; $8c07: 00 00 00 00   Data
-            .hex 00 00 1c 00   ; $8c0b: 00 00 1c 00   Data
-            .hex 00 15 00 11   ; $8c0f: 00 15 00 11   Data
-            .hex 00 00 00 00   ; $8c13: 00 00 00 00   Data
-            .hex 00 00 00 00   ; $8c17: 00 00 00 00   Data
-            .hex 00 00 00 00   ; $8c1b: 00 00 00 00   Data
-            .hex 00 00 00 00   ; $8c1f: 00 00 00 00   Data
-            .hex 00 00 00 00   ; $8c23: 00 00 00 00   Data
-            .hex 08 00 00 0c   ; $8c27: 08 00 00 0c   Data
-            .hex 00 00 07 00   ; $8c2b: 00 00 07 00   Data
-            .hex 00 00 25 00   ; $8c2f: 00 00 25 00   Data
-            .hex 14 00 12 00   ; $8c33: 14 00 12 00   Data
-            .hex 13 00 00 00   ; $8c37: 13 00 00 00   Data
-            .hex 0e 00 00 04   ; $8c3b: 0e 00 00 04   Data
-            .hex 00 00 00 1d   ; $8c3f: 00 00 00 1d   Data
-            .hex 00 0a 00 0f   ; $8c43: 00 0a 00 0f   Data
-            .hex 00 00 03 00   ; $8c47: 00 00 03 00   Data
-            .hex 00 00 0b 00   ; $8c4b: 00 00 0b 00   Data
-            .hex 00 02 00 00   ; $8c4f: 00 02 00 00   Data
-            .hex 00 0d 00 10   ; $8c53: 00 0d 00 10   Data
-            .hex 00 0c 00 00   ; $8c57: 00 0c 00 00   Data
-            .hex 01 00 00 00   ; $8c5b: 01 00 00 00   Data
-            .hex 09 00 00 00   ; $8c5f: 09 00 00 00   Data
-            .hex 00 00 1b 00   ; $8c63: 00 00 1b 00   Data
-            .hex 1a 00 19 00   ; $8c67: 1a 00 19 00   Data
-            .hex 18 00 17 00   ; $8c6b: 18 00 17 00   Data
-            .hex 00 16 00 00   ; $8c6f: 00 16 00 00   Data
-            .hex 00            ; $8c73: 00            Data
-__8c74:     .hex 00 00 00 00   ; $8c74: 00 00 00 00   Data
-            .hex 00 00 1c 00   ; $8c78: 00 00 1c 00   Data
-            .hex 00 15 00 11   ; $8c7c: 00 15 00 11   Data
-            .hex 00 00 00 00   ; $8c80: 00 00 00 00   Data
-            .hex 00 00 00 00   ; $8c84: 00 00 00 00   Data
-            .hex 00 00 00 00   ; $8c88: 00 00 00 00   Data
-            .hex 00 00 00 00   ; $8c8c: 00 00 00 00   Data
-            .hex 00 00 00 00   ; $8c90: 00 00 00 00   Data
-            .hex 08 00 00 0c   ; $8c94: 08 00 00 0c   Data
-            .hex 00 00 07 00   ; $8c98: 00 00 07 00   Data
-            .hex 00 00 25 00   ; $8c9c: 00 00 25 00   Data
-            .hex 14 00 12 00   ; $8ca0: 14 00 12 00   Data
-            .hex 13 00 00 00   ; $8ca4: 13 00 00 00   Data
-            .hex 0e 00 00 04   ; $8ca8: 0e 00 00 04   Data
-            .hex 00 00 00 1d   ; $8cac: 00 00 00 1d   Data
-            .hex 00 0a 00 0f   ; $8cb0: 00 0a 00 0f   Data
-            .hex 00 00 03 00   ; $8cb4: 00 00 03 00   Data
-            .hex 00 00 0b 00   ; $8cb8: 00 00 0b 00   Data
-            .hex 00 02 00 00   ; $8cbc: 00 02 00 00   Data
-            .hex 00 0d 00 10   ; $8cc0: 00 0d 00 10   Data
-            .hex 00 0c 00 00   ; $8cc4: 00 0c 00 00   Data
-            .hex 01 00 00 00   ; $8cc8: 01 00 00 00   Data
-            .hex 09 00 00 00   ; $8ccc: 09 00 00 00   Data
-            .hex 00 00 24 00   ; $8cd0: 00 00 24 00   Data
-            .hex 23 00 22 00   ; $8cd4: 23 00 22 00   Data
-            .hex 21 00 20 00   ; $8cd8: 21 00 20 00   Data
-            .hex 00 16 00 00   ; $8cdc: 00 16 00 00   Data
-            .hex 00            ; $8ce0: 00            Data
+__8c07:     .hex 00 00 00 00 00 00
+            ; Push start
+            .hex 1c
+            .hex 00 00
+            ; Copyright...
+            .hex 15 00 11
+            .hex 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+            ; Special thanks...
+            .hex 25 00 14 00 12 00 13
+            .hex 00 00 00
+            ; Producer...
+            .hex 08 00 0c 00 00 07
+            .hex 00 00 00
+            ; Planner
+            .hex 0e 00 00 04
+            .hex 00 00 00
+            ; Composer...
+            .hex 1d 00 00 26
+            .hex 00 00 00
+            ; Sound...
+            .hex 27 00 0a 00 0f 00 00 03
+            .hex 00 00 00
+            ; Character...
+            .hex 0b 00 00 02
+            .hex 00 00 00
+            ; Programmer...
+            .hex 0d 00 10 00 0c 00 00 01
+            .hex 00 00 00
+            ; Staff
+            .hex 09
+            .hex 00 00 00 00 00
+            ; Congratulations...
+            .hex 1b 00 1a 00 19 00 18 00 17 00 00 16
+            .hex 00 00 00
 
-__8ce1:     .db $0a, $0b, <__8d95, >__8d95
-            .db $09, $0b, <_x8d9f, >_x8d9f
-            .db $05, $0d, <__8da8, >__8da8
-            .db $07, $0c, <__8dad, >__8dad
-            .db $07, $0e, <__8db6, >__8db6
-            .db $07, $0e, <__8dbd, >__8dbd
-            .db $08, $0c, <__8dc4, >__8dc4
-            .db $08, $0c, <__8dcc, >__8dcc
-            .db $05, $0d, <__8dd4, >__8dd4
-            .db $0a, $0b, <__8dd9, >__8dd9
-            .db $09, $0b, <__8de3, >__8de3
-            .db $0b, $0a, <__8dec, >__8dec
-            .db $11, $08, <__8df7, >__8df7
-            .db $0b, $0a, <__8e08, >__8e08
-            .db $07, $0c, <__8e13, >__8e13
-            .db $0b, $0a, <__8e1a, >__8e1a
-            .db $13, $07, <__8e25, >__8e25
-            .db $0a, $0b, <__8e38, >__8e38
-            .db $12, $07, <__8e42, >__8e42
-            .db $0d, $09, <__8e54, >__8e54
-            .db $13, $07, <__8e61, >__8e61
-            .db $10, $08, <__8e74, >__8e74
-            .db $0d, $09, <__8e84, >__8e84
-            .db $18, $04, <__8e91, >__8e91
-            .db $0d, $09, <__8ea9, >__8ea9
-            .db $05, $0e, <__8eb6, >__8eb6
-            .db $14, $06, <__8ebb, >__8ebb
-            .db $11, $08, <__8ecf, >__8ecf
-            .db $0e, $08, <__8ee0, >__8ee0
-            .db $02, $10, <__8db4, >__8db4
-            .db $18, $04, <__8eee, >__8eee
-            .db $11, $09, <__8ef8, >__8ef8
-            .db $16, $06, <__8f09, >__8f09
-            .db $19, $04, <__8f1f, >__8f1f
-            .db $12, $08, <__8f38, >__8f38
-            .db $11, $09, <__8f4a, >__8f4a
-            .db $0c, $0b, <__8f5b, >__8f5b
+__8c74:     .hex 00 00 00 00 00 00
+            ; Push start
+            .hex 1c
+            .hex 00 00
+            ; Copyright...
+            .hex 15 00 11
+            .hex 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+            ; Special thanks...
+            .hex 25 00 14 00 12 00 13
+            .hex 00 00 00
+            ; Producer...
+            .hex 08 00 0c 00 00 07
+            .hex 00 00 00
+            ; Planner
+            .hex 0e 00 00 04
+            .hex 00 00 00
+            ; Composer...
+            .hex 1d 00 00 26
+            .hex 00 00 00
+            ; Sound...
+            .hex 27 00 0a 00 0f 00 00 03
+            .hex 00 00 00
+            ; Character...
+            .hex 0b 00 00 02
+            .hex 00 00 00
+            ; Programmer...
+            .hex 0d 00 10 00 0c 00 00 01
+            .hex 00 00 00
+            ; Staff
+            .hex 09
+            .hex 00 00 00 00 00
+            ; Congratulations...
+            .hex 24 00 23 00 22 00 21 00 20 00 00 16
+            .hex 00 00 00
+
+            ;   len  pos
+__8ce1:     .db $0b, $0a, <__8d95, >__8d95      ;01 - PROGRAMISTO
+            .db $07, $0c, <_x8d9f, >_x8d9f      ;02 - ROLULOJ
+            .db $05, $0d, <__8da8, >__8da8      ;03 - SONOJ
+            .db $0a, $0b, <__8dad, >__8dad      ;04 - DEZAJNISTO
+            .db $07, $0e, <__8db6, >__8db6      ;05 - d2..d8
+            .db $07, $0e, <__8dbd, >__8dbd      ;06 - d9..df
+            .db $0a, $0b, <__8dc4, >__8dc4      ;07 - PRODUKTORO
+            .db $08, $0c, <__8dcc, >__8dcc      ;08 - P.M.D.C.
+            .db $09, $0b, <__8dd4, >__8dd4      ;09 - PERSONARO
+            .db $0f, $08, <__8dd9, >__8dd9      ;0a - HISAYOSHI OGURA
+            .db $0a, $0b, <__8de3, >__8de3      ;0b - SHINOBU I.
+            .db $0f, $08, <__8dec, >__8dec      ;0c - SHOJI TAKAHASHI
+            .db $11, $07, <__8df7, >__8df7      ;0d - YUICHIRO KAWAMUKI
+            .db $0f, $08, <__8e08, >__8e08      ;0e - SHUNICHI TAKASE
+            .db $07, $0c, <__8e13, >__8e13      ;0f - SHOTARO
+            .db $09, $0b, <__8e1a, >__8e1a      ;10 - OMAKE KZM
+            .db $12, $07, <__8e25, >__8e25      ;11 - (c) TAITO CORP. 1988
+            .db $0d, $09, <__8e38, >__8e38      ;12 - FUKIO MISUJI
+            .db $13, $06, <__8e42, >__8e42      ;13 - SPECIALAN DANKON AL
+            .db $0d, $09, <__8e54, >__8e54      ;14 - KAZUYA TATUYA
+            .db $16, $05, <__8e61, >__8e61      ;15 - CXIUJ RAJTOJ REZERVITAJ
+            .db $09, $0b, <__8e74, >__8e74      ;16 - GRATULON!
+            .db $0c, $0a, <__8e84, >__8e84      ;17 - VI TROVIS LA
+            .db $12, $07, <__8e91, >__8e91      ;18 - PLEJ GRAVAN MAGION
+            .db $11, $07, <__8ea9, >__8ea9      ;19 - EN LA TUTA MONDO.
+            .db $08, $0c, <__8eb6, >__8eb6      ;1a - GXI ESTAS
+            .db $10, $08, <__8ebb, >__8ebb      ;1b - AMO KAJ AMIKECO.
+            .db $0d, $09, <__8ecf, >__8ecf      ;1c - PREMU "START"
+            .db $10, $08, <__8ee0, >__8ee0      ;1d - TADASHI KIMIJIMI
+            .db $02, $10, <__8db4, >__8db4      ;1e - d0 d1
+            .db $18, $04, <__8eee, >__8eee      ;1f - PASS WORD (unused?)
+            .db $10, $08, <__8ef8, >__8ef8      ;20 - BUBBY KAJ BOBBY,
+            .db $16, $05, <__8f09, >__8f09      ;21 - VI SAVIS LA AMATINOJN,
+            .db $10, $08, <__8f1f, >__8f1f      ;22 - BETTY KAJ PATTY!
+            .db $10, $08, <__8f38, >__8f38      ;23 - SED VIA AVENTURO
+            .db $12, $07, <__8f4a, >__8f4a      ;24 - NE JAM FINIGXAS ...
+            .db $0c, $0a, <__8f5b, >__8f5b      ;25 - OMAKE TANAKA
+            .db $0a, $0b, <KOMPONSITO, >KOMPONSITO  ;26 - KOMPONSITO
+            .db $0f, $08, <MASAHIKO, >MASAHIKO  ;27 - MASAHIKO TAKAKI
+            .db $0e, $09, <ICHIRO, >ICHIRO      ;28 - ICHIRO FUJISUE
 
 __8d75:     .hex 26 26 26 26   ; $8d75: 26 26 26 26   Data
             .hex 26 26 26 26   ; $8d79: 26 26 26 26   Data
@@ -1635,17 +1652,17 @@ __8d75:     .hex 26 26 26 26   ; $8d75: 26 26 26 26   Data
             .hex 26 26 26 26   ; $8d8d: 26 26 26 26   Data
             .hex 26 26 26 26   ; $8d91: 26 26 26 26   Data
 
-            ;     P  R  O  G  R  A  M  M  E  R
-__8d95:     .hex 19 1b 18 10 1b 0a 16 16 0e 1b
+            ;     P  R  O  G  R  A  M  I  S  T  O
+__8d95:     .hex 1b 1c 1a 11 1c 0a 18 14 1d 1e 1a
 
-            ;     C  H  A  R  A  C  T  E  R
-_x8d9f:     .hex 0c 11 0a 1b 0a 0c 1d 0e 1b
+            ;     R  O  L  U  L  O  J
+_x8d9f:     .hex 1c 1a 17 1f 17 1a 15
 
-            ;     S  O  U  N  D
-__8da8:     .hex 1c 18 1e 17 0d
+            ;     S  O  N  O  J
+__8da8:     .hex 1d 1a 19 1a 15
 
-            ;     P  L  A  N  N  E  R
-__8dad:     .hex 19 15 0a 17 17 0e 1b
+            ;     D  E  Z  A  J  N  I  S  T  O
+__8dad:     .hex 0e 0f 23 0a 15 19 14 1d 1e 1a
 
 __8db4:     .hex d0 d1         ; $8db4: d0 d1         Data
 __8db6:     .hex d2 d3 d4 d5   ; $8db6: d2 d3 d4 d5   Data
@@ -1653,95 +1670,92 @@ __8db6:     .hex d2 d3 d4 d5   ; $8db6: d2 d3 d4 d5   Data
 __8dbd:     .hex d9 da db dc   ; $8dbd: d9 da db dc   Data
             .hex dd de df      ; $8dc1: dd de df      Data
 
-            ;     P  R  O  D  U  C  E  R
-__8dc4:     .hex 19 1b 18 0d 1e 0c 0e 1b
+            ;     P  R  O  D  U  K  T  O  R  O
+__8dc4:     .hex 1b 1c 1a 0e 1f 16 1e 1a 1c 1a
 
             ;     P  .  M  .  D  .  C  .
-__8dcc:     .hex 19 2a 16 2a 0d 2a 0c 2a
+__8dcc:     .hex 1b 2a 18 2a 0e 2a 0c 2a
 
-            ;     S  T  A  F  F
-__8dd4:     .hex 1c 1d 0a 0f 0f
+            ;     P  E  R  S  O  N  A  R  O
+__8dd4:     .hex 1b 0f 1c 1d 1a 19 0a 1c 1a
 
-            ;     O  G  R  ,  T  A  K  A  G  I
-__8dd9:     .hex 18 10 1b 29 1d 0a 14 0a 10 12
+            ;     H  I  S  A  Y  O  S  H  I     O  G  U  R  A
+__8dd9:     .hex 13 14 1d 0a ea 1a 1d 13 14 26 1a 11 1f 1c 0a
 
-            ;     S  H  I  N  O  B  U  .  I
-__8de3:     .hex 1c 11 12 17 18 0b 1e 2a 12
+            ;     S  H  I  N  O  B  U     I  .
+__8de3:     .hex 1d 13 14 19 1a 0b 1f 26 14 2a
 
-            ;     S  .  T  A  K  A  H  A  S  H  I
-__8dec:     .hex 1c 2a 1d 0a 14 0a 11 0a 1c 11 12
+            ;     S  H  O  J  I     T  A  K  A  H  A  S  H  I
+__8dec:     .hex 1d 13 1a 15 14 26 1e 0a 16 0a 13 0a 1d 13 14
 
-            ;     Y  U  I  C  H  I  R  O  .  K  A  W  A  M  U  K  I
-__8df7:     .hex 22 1e 12 0c 11 12 1b 18 2a 14 0a 20 0a 16 1e 14 12
+            ;     Y  U  I  C  H  I  R  O     K  A  W  A  M  U  K  I
+__8df7:     .hex ea 1f 14 0c 13 14 1c 1a 26 16 0a e9 0a 18 1f 16 14
 
-            ;     S  L  E  E  P  Y  .  S  H  U  N
-__8e08:     .hex 1c 15 0e 0e 19 22 2a 1c 11 1e 17
+            ;     S  H  U  N  I  C  H  I     T  A  K  A  S  E
+__8e08:     .hex 1d 13 1f 19 14 0c 13 14 26 1e 0a 16 0a 1d 0f
 
             ;     S  H  O  T  A  R  O
-__8e13:     .hex 1c 11 18 1d 0a 1b 18
+__8e13:     .hex 1d 13 1a 1e 0a 1c 1a
 
-            ;     D  R  U  N  K  E  R  .  K  Z  M
-__8e1a:     .hex 0d 1b 1e 17 14 0e 1b 2a 14 23 16
+            ;     O  M  A  K  E     K  Z  M
+__8e1a:     .hex 1a 18 0a 16 0f 26 16 23 18
 
-            ;    (c)    T  A  I  T  O     C  O  R  P  .        1  9  8  8
-__8e25:     .hex 24 26 1d 0a 12 1d 18 26 0c 18 1b 19 2a 26 26 01 09 08 08
+            ;    (c)    T  A  I  T  O     C  O  R  P  .     1  9  8  8
+__8e25:     .hex 24 26 1e 0a 14 1e 1a 26 0c 1a 1c 1b 2a 26 01 09 08 08
 
-            ;     M  T  J     ,     I  .  F
-__8e38:     .hex 16 1d 13 26 29 26 12 2a 0f 26
+            ;     F  U  K  I  O     M  I  T  S  U  J  I
+__8e38:     .hex 10 1f 16 14 1a 26 18 14 1e 1d 1f 15 14
 
-            ;     S  P  E  C  I  A  L     T  H  A  N  K  S     T  O ..
-__8e42:     .hex 1c 19 0e 0c 12 0a 15 26 1d 11 0a 17 14 1c 26 1d 18 2d
+            ;     S  P  E  C  I  A  L  A  N     D  A  N  K  O  N     A  L
+__8e42:     .hex 1d 1b 0f 0c 14 0a 17 0a 19 26 0e 0a 19 16 1a 19 26 0a 17
 
-            ;     K  A  Z  U  Y  A  .  T  A  T  U  Y  A
-__8e54:     .hex 14 0a 23 1e 22 0a 2a 1d 0a 1d 1e 22 0a
+            ;     K  A  Z  U  Y  A     T  A  T  U  Y  A
+__8e54:     .hex 16 0a 23 1f ea 0a 26 1e 0a 1e 1f ea 0a
 
-            ;     A  L  L     R  I  G  H  T  S     R  E  S  E  R  V  E  D
-__8e61:     .hex 0a 15 15 26 1b 12 10 11 1d 1c 26 1b 0e 1c 0e 1b 1f 0e 0d
+            ;    CX  I  U  J     R  A  J  T  O  J     R  E  Z  E  R  V  I  T  A  J
+__8e61:     .hex 0d 14 1f 15 26 1c 0a 15 1e 1a 15 26 1c 0f 23 0f 1c 20 14 1e 0a 15
 
-            ;     C  O  N  G  R  A  T  U  L  A  T  I  O  N  S  !
-__8e74:     .hex 0c 18 17 10 1b 0a 1d 1e 15 0a 1d 12 18 17 1c 25
+            ;     G  R  A  T  U  L  O  N  !
+__8e74:     .hex 11 1c 0a 1e 1f 17 1a 19 25
 
-            ;     N  O  W  ,  Y  O  U     F  O  U  N  D
-__8e84:     .hex 17 18 20 29 22 18 1e 26 0f 18 1e 17 0d
+            ;     V  I     T  R  O  V  I  S     L  A
+__8e84:     .hex 20 14 26 1e 1c 1a 20 14 1d 26 17 0a
 
-            ;     T  H  E     M  O  S  T     I  M  P  O  R  T  A  N  T     M  A  G  I  C
-__8e91:     .hex 1d 11 0e 26 16 18 1c 1d 26 12 16 19 18 1b 1d 0a 17 1d 26 16 0a 10 12 0c
+            ;     P  L  E  J     G  R  A  V  A  N     M  A  G  I  O  N
+__8e91:     .hex 1b 17 0f 15 26 11 1c 0a 20 0a 19 26 18 0a 11 14 1a 19
 
-            ;     I  N     T  H  E     W  O  R  L  D  .
-__8ea9:     .hex 12 17 26 1d 11 0e 26 20 18 1b 15 0d 2a
+            ;     E  N     L  A     T  U  T  A     M  O  N  D  O  .
+__8ea9:     .hex 0f 19 26 17 0a 26 1e 1f 1e 0a 26  18 1a 19 0e 1a 2a
 
-            ;     I  T     I  S
-__8eb6:     .hex 12 1d 26 12 1c
+            ;    GX  I     E  S  T  A  S
+__8eb6:     .hex 12 14 26 0f 1d 1e 0a 1d
 
-            ;     L  O  V  E     A  N  D     F  R  I  E  N  D  S  H  I  P  .
-__8ebb:     .hex 15 18 1f 0e 26 0a 17 0d 26 0f 1b 12 0e 17 0d 1c 11 12 19 25
+            ;     A  M  O     K  A  J     A  M  I  K  E  C  O  .
+__8ebb:     .hex 0a 18 1a 26 16 0a 15 26 0a 18 14 16 0f 0c 1a 2a
 
-            ;     P  U  S  H     S  T  A  R  T     B  U  T  T  O  N
-__8ecf:     .hex 19 1e 1c 11 26 1c 1d 0a 1b 1d 26 0b 1e 1d 1d 18 17
+            ;     P  R  E  M  U     "  S  T  A  R  T  "
+__8ecf:     .hex 1b 1c 0f 18 1f 26 2b 1d 1e 0a 1c 1e 2b
 
-            ;     C  O  M  P  O  S  E  R        K  I  M  I
-__8ee0:     .hex 0c 18 16 19 18 1c 0e 1b 26 26 14 12 16 12
+            ;     T  A  D  A  S  H  I     K  I  M  I  J  I  M  I
+__8ee0:     .hex 1e 0a 0e 0a 1d 13 14 26 16 14 18 14 15 14 18 14
 
-            ;     P  A  S  S     W  O  R  D
+            ;     P  A  S  S     W  O  R  D   (unused?)
 __8eee:     .hex 19 0a 1c 1c 26 20 18 1b 0d 26
 
-            ;     B  O  B  B  Y  ,     A  N  D     B  A  B  B  Y  .
-__8ef8:     .hex 0b 18 0b 0b 22 29 26 0a 17 0d 26 0b 0a 0b 0b 22 2a
+            ;     B  A  B  B  Y     K  A  J     B  O  B  B  Y  ,
+__8ef8:     .hex 0b 0a 0b 0b ea 26 16 0a 15 26 0b 1a 0b 0b ea 29
 
-            ;     Y  O  U     S  A  V  E  D     Y  O  U  R     L  O  V  E  R  S  ,
-__8f09:     .hex 22 18 1e 26 1c 0a 1f 0e 0d 26 22 18 1e 1b 26 15 18 1f 0e 1b 1c 29
+            ;     V  I     S  A  V  I  S     L  A     A  M  A  T  I  N  O  J  N  ,
+__8f09:     .hex 20 14 26 1d 0a 20 14 1d 26 17 0a 26 0a 18 0a 1e 14 19 1a 15 19 29
 
-            ;     "  B  E  T  T  Y     A  N  D     P  A  T  T  Y     A  T     L  A  S  T  !
-__8f1f:     .hex 2b 0b 0e 1d 1d 22 26 0a 17 0d 26 19 0a 1d 1d 22 26 0a 1d 26 15 0a 1c 1d 2c
+            ;     B  E  T  T  Y     K  A  J     P  A  T  T  Y  !
+__8f1f:     .hex 0b 0f 1e 1e ea 26 16 0a 15 26 1b 0a 1e 1e ea 25
 
-            ;     B  U  T     Y  O  U  R     A  D  V  E  N  T  U  R  E
-__8f38:     .hex 0b 1e 1d 26 22 18 1e 1b 26 0a 0d 1f 0e 17 1d 1e 1b 0e
+            ;     S  E  D     V  I  A     A  V  E  N  T  U  R  O
+__8f38:     .hex 1d 0f 0e 26 20 14 0a 26 0a 20 0f 19 1e 1f 1c 1a
 
-            ;        I  S     N  O  T     O  V  E  R     Y  E  T ..
-__8f4a:     .hex 26 12 1c 26 17 18 1d 26 18 1f 0e 1b 26 22 0e 1d 2d
-
-            ;     O  M  A  K  E     T  A  N  A  K  A
-__8f5b:     .hex 18 16 0a 14 0e 26 1d 0a 17 0a 14 0a
+            ; 3 byte
+            .pad $8f67
 
 ;-------------------------------------------------------------------------------
 __8f67:     lda #$3f           ; $8f67: a9 3f
@@ -2067,7 +2081,7 @@ __921f:     .hex 1b 1c 0f 18 1f 26 2b 1d 1e 0a 1c 1e 2b
 
             ; 16 bytes
             .pad $9229
- 
+
 __9229:     ldx #$ed           ; $9229: a2 ed
             lda #$21           ; $922b: a9 21
             jsr __fa13         ; $922d: 20 13 fa
@@ -3014,3 +3028,18 @@ __999c:     .hex aa 99 ff 25   ; $999c: aa 99 ff 25   Data
             .hex 00 00 35 37 39 3b 7d 7f 29 2b 2d 2f 31 33 29 2b 35 37 39 3b 7d 7f 29 2b 2d 2f 31 33 29 2b 00 00
             .hex 00 00 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 00 00
             .hex 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+            ;     N  E     J  A  M     F  I  N  I GX  I  S     .  .  .
+__8f4a:     .hex 19 0f 26 15 0a 18 26 10 14 19 14 12 14 1d 26 2a 2a 2a
+
+            ;     O  M  A  K  E     T  A  N  A  K  A
+__8f5b:     .hex 1a 18 0a 16 0f 26 1e 0a 19 0a 16 0a
+
+            ;     K  O  M  P  O  N  I  S  T  O
+KOMPONSITO: .hex 16 1a 18 1b 1a 19 14 1d 1e 1a
+
+            ;     M  A  S  A  H  I  K  O     T  A  K  A  K  I
+MASAHIKO:   .hex 18 0a 1d 0a 13 14 16 1a 26 1e 0a 16 0a 16 14
+
+            ;     I  C  H  I  R  O     F  U  J  U  S  U  E
+ICHIRO:     .hex 14 0c 13 14 1c 1a 26 10 1f 15 1f 1d 1f 0f
