@@ -1918,39 +1918,38 @@ __9088:     tya                ; $9088: 98
             lda #$01           ; $9095: a9 01
             jsr __cee3         ; $9097: 20 e3 ce
             lda #$21           ; $909a: a9 21
-            ldx #$4c           ; $909c: a2 4c
-            ldy #$08           ; $909e: a0 08
+            ldx #$4a
+            ldy #$0c
             jsr __fa04         ; $90a0: 20 04 fa
             .db <__9180, >__9180
             lda #$21           ; $90a5: a9 21
             ldx #$83           ; $90a7: a2 83
-            ldy #$1a           ; $90a9: a0 1a
+            ldy #$17
             jsr __fa04         ; $90ab: 20 04 fa
             .db <__9188, >__9188
             lda #$01           ; $90b0: a9 01
             jsr __cee3         ; $90b2: 20 e3 ce
             lda #$21           ; $90b5: a9 21
             ldx #$c3           ; $90b7: a2 c3
-            ldy #$18           ; $90b9: a0 18
+            ldy #$16
             jsr __fa04         ; $90bb: 20 04 fa
             .db <__91a2, >__91a2
             lda #$22           ; $90c0: a9 22
             ldx #$03           ; $90c2: a2 03
-            ldy #$05           ; $90c4: a0 05
+            ldy #$18
             jsr __fa04         ; $90c6: 20 04 fa
             .db <__91ba, >__91ba
             lda #$22           ; $90cb: a9 22
             ldx #$43           ; $90cd: a2 43
-            ldy #$1a           ; $90cf: a0 1a
+            ldy #$0d
             jsr __fa04         ; $90d1: 20 04 fa
             .db <__91bf, >__91bf
             lda #$01           ; $90d6: a9 01
             jsr __cee3         ; $90d8: 20 e3 ce
-            lda #$22           ; $90db: a9 22
-            ldx #$83           ; $90dd: a2 83
-            ldy #$0f           ; $90df: a0 0f
-            jsr __fa04         ; $90e1: 20 04 fa
-            .db <__91d9, >__91d9
+
+            ; NOP 11 bytes
+            .pad $90e6, $ea
+
             jmp __9121         ; $90e6: 4c 21 91
 __90e9:     tya                ; $90e9: 98
             pha                ; $90ea: 48
@@ -1965,20 +1964,20 @@ __90e9:     tya                ; $90e9: 98
             lda #$01           ; $90f6: a9 01
             jsr __cee3         ; $90f8: 20 e3 ce
             lda #$21           ; $90fb: a9 21
-            ldx #$6c           ; $90fd: a2 6c
-            ldy #$08           ; $90ff: a0 08
+            ldx #$6a
+            ldy #$0c
             jsr __fa04         ; $9101: 20 04 fa
             .db <__9180, >__9180
             lda #$21           ; $9106: a9 21
             ldx #$a3           ; $9108: a2 a3
-            ldy #$1a           ; $910a: a0 1a
+            ldy #$17
             jsr __fa04         ; $910c: 20 04 fa
             .db <__9188, >__9188
             lda #$01           ; $9111: a9 01
             jsr __cee3         ; $9113: 20 e3 ce
             lda #$21           ; $9116: a9 21
             ldx #$e3           ; $9118: a2 e3
-            ldy #$1b           ; $911a: a0 1b
+            ldy #$12
             jsr __fa04         ; $911c: 20 04 fa
             .db <__91e8, >__91e8
 __9121:     lda #$22           ; $9121: a9 22
@@ -1987,8 +1986,8 @@ __9121:     lda #$22           ; $9121: a9 22
             jsr __fa04         ; $9127: 20 04 fa
             .db <__9203, >__9203
             lda #$23           ; $912c: a9 23
-            ldx #$2b           ; $912e: a2 2b
-            ldy #$0a           ; $9130: a0 0a
+            ldx #$2a
+            ldy #$0d
             jsr __fa04         ; $9132: 20 04 fa
             .db <__921f, >__921f
             lda $0401          ; $9137: ad 01 04
@@ -2030,45 +2029,45 @@ __9172:     lda #$22           ; $9172: a9 22
             jmp __8b18         ; $917d: 4c 18 8b
 
 ;-------------------------------------------------------------------------------
-            ;     B  A  D        E  N  D
-__9180:     .hex 0b 0a 0d 26 26 0e 17 0d
+            ;     M  A  L  B  O  N  A     F  I  N  O
+__9180:     .hex 18 0a 17 0b 1a 19 0a 26 10 14 19 1a
 
-            ;     T  H  I  S     I  S     N  O  T     A     T  R  U  E     E  N  D  I  N  G  !
-__9188:     .hex 1d 11 12 1c 26 12 1c 26 17 18 1d 26 0a 26 1d 1b 1e 0e 26 0e 17 0d 12 17 10 25
+            ;     L  A     L  U  D  O     N  E     J  A  M     F  I  N  I GX  I  S  !
+__9188:     .hex 17 0a 26 17 1f 0e 1a 26 19 0f 26 15 0a 18 26 10 14 19 14 12 14 1d 25
 
-            ;     T  A  K  E     T  H  E     M  A  G  I  C  A  L     C  R  Y  S  T  A  L
-__91a2:     .hex 1d 0a 14 0e 26 1d 11 0e 26 16 0a 10 12 0c 0a 15 26 0c 1b 22 1c 1d 0a 15
+            ;     T  R  O  V  U     L  A     M  A  G  I  A  N     G  L  O  B  O  N
+__91a2:     .hex 1e 1c 1a 20 1f 26 17 0a 26 18 0a 11 14 0a 19 26 11 17 1a 0b 1a 19
 
-            ;     B  A  L  L  .
-__91ba:     .hex 0b 0a 15 15 2a
+            ;     P  O  R     M  A  L  K  A SX  I     L  A     P  O  R  D  O  N     A  L
+__91ba:     .hex 1b 1a 1c 26 18 0a 17 16 0a 22 14 26 17 0a 26 1b 1a 1c 0e 1a 19 26 0a 17
 
-            ;     A  N  D     Y  O  U     W  I  L  L     F  I  N  D     T  H  E     D  O  O  R
-__91bf:     .hex 0a 17 0d 26 22 18 1e 26 20 12 15 15 26 0f 12 17 0d 26 1d 11 0e 26 0d 18 18 1b
+            ;     S  E  K  R  E  T  A     V  O  J  O  .
+__91bf:     .hex 1d 0f 16 1c 0f 1e 0a 26 20 1a 15 1a 25
 
-            ;     T  O     S  E  C  R  E  T     R  O  A  D  .
-__91d9:     .hex 1d 18 26 1c 0e 0c 1b 0e 1d 26 1b 18 0a 0d 25
+            ;     R  E  P  R  O  V  U     K  U  N     A  M  I  K  O  .
+__91e8:     .hex 1c 0f 1b 1c 1a 20 1f 26 16 1f 19 26 0a 18 14 16 1a 2a
 
-            ;     T  R  Y     A  G  A  I  N     W  I  T  H     Y  O  U  R     F  R  I  E  N  D  .
-__91e8:     .hex 1d 1b 22 26 0a 10 0a 12 17 26 20 12 1d 11 26 22 18 1e 1b 26 0f 1b 12 0e 17 0d 2a
+            ;     P  A  S  V  O  R  T  O
+__9203:     .hex 1b 0a 1d 20 1a 1c 1e 1a
 
-            ;     P  A  S  S  W  O  R  D
-__9203:     .hex 19 0a 1c 1c 20 18 1b 0d
-
-            ;     G  E  J  J  J
+            ;     F  D  H  H  H (was GEJJJ)
 __920b:     .hex 10 0e 13 13 13
 
-            ;     G  E  J  A  J
+            ;     F  D  H  A  H (was GEJAJ)
 __9210:     .hex 10 0e 13 0a 13
 
-            ;     E  E  C  J  J
+            ;     D  D  C  H  H (was EECJJ)
 __9215:     .hex 0e 0e 0c 13 13
 
-            ;     E  E  C  F  G
+            ;     D  D  C  E  F (was EECFG)
 __921a:     .hex 0e 0e 0c 0f 10
 
-            ;     P  U  S  H     S  T  A  R  T
-__921f:     .hex 19 1e 1c 11 26 1c 1d 0a 1b 1d
+            ;     P  R  E  M  U     "  S  T  A  R  T  "
+__921f:     .hex 1b 1c 0f 18 1f 26 2b 1d 1e 0a 1c 1e 2b
 
+            ; 16 bytes
+            .pad $9229
+ 
 __9229:     ldx #$ed           ; $9229: a2 ed
             lda #$21           ; $922b: a9 21
             jsr __fa13         ; $922d: 20 13 fa
