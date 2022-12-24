@@ -20,5 +20,6 @@ dd if=chr/alphabet2.bin of="$ROM" conv=notrunc bs=1 seek=$((0x27010))
 dd if=chr/underline.bin of="$ROM" conv=notrunc bs=1 seek=$((0x27e90))
 dd if=chr/alphabet2-w.bin of="$ROM" conv=notrunc bs=1 seek=$((0x27ea0))
 dd if=chr/alphabet2-y.bin of="$ROM" conv=notrunc bs=1 seek=$((0x27eb0))
+dd if=chr/happyend.bin of="$ROM" conv=notrunc bs=1 seek=$((0x27470))
 
 echo "Done"
