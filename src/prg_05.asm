@@ -2914,14 +2914,14 @@ __98d3:     .hex ff 2c 23 30   ; $98d3: ff 2c 23 30   Data
             .hex ff 3c 25 15   ; $98df: ff 3c 25 15   Data
 __98e3:     jsr __faaa         ; $98e3: 20 aa fa
             lda #$22           ; $98e6: a9 22
-            ldx #$8a           ; $98e8: a2 8a
+            ldx #$4a
             ldy #$0c           ; $98ea: a0 0c
             jsr __fa04         ; $98ec: 20 04 fa
             .db <__992e, >__992e
             lda #$00           ; $98f1: a9 00
             sta $68            ; $98f3: 85 68
 __98f5:     ldy #$22           ; $98f5: a0 22
-            ldx #$d0           ; $98f7: a2 d0
+            ldx #$8f
             .hex ad 68 00      ; $98f9: ad 68 00  Bad Addr Mode - LDA $0068
             jsr __c4e9         ; $98fc: 20 e9 c4
 __98ff:     lda #$01           ; $98ff: a9 01
@@ -2951,8 +2951,8 @@ __9923:     lda $68            ; $9923: a5 68
             jmp __98f5         ; $992b: 4c f5 98
 
 ;-------------------------------------------------------------------------------
-            ;     S  O  U  N  D     S  E  L  E  C  T
-__992e:     .hex 1c 18 1e 17 0d 26 1c 0e 15 0e 0c 1d
+            ;     E  L  E  K  T  I     S  O  N  O  N
+__992e:     .hex 0f 17 0f 16 1e 14 26 1d 1a 19 1a 19
 
 __993a:     jsr __f88b         ; $993a: 20 8b f8
             lda #$20           ; $993d: a9 20
