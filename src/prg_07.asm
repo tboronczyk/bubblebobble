@@ -1188,8 +1188,8 @@ __c8c5:     lda #$20           ; $c8c5: a9 20
             lda $046c          ; $c906: ad 6c 04
             beq __c916         ; $c909: f0 0b
             lda #$20           ; $c90b: a9 20
-            ldx #$a5           ; $c90d: a2 a5
-            ldy #$05           ; $c90f: a0 05
+            ldx #$a4
+            ldy #$06
             jsr __fa04         ; $c911: 20 04 fa
             .db <__c930, >__c930
 __c916:     lda #$22           ; $c916: a9 22
@@ -1207,9 +1207,6 @@ __c925:     lda __c976,x       ; $c925: bd 76 c9
             rts                ; $c92f: 60
 
 ;-------------------------------------------------------------------------------
-            ;     S  U  P  E  R
-__c930:     .hex 1d 1f 1b 0f 1c
-
             ;     1  L
 __c935:     .hex 01 17
 
@@ -1236,6 +1233,9 @@ __c96b:     .hex 26 26 26 26 26 26 26 26 26 26 26
 
 __c976:     .hex 39 26 03 42   ; $c976: 39 26 03 42   Data
             .hex 39 28 03 4a   ; $c97a: 39 28 03 4a   Data
+
+            ; 5 bytes
+            .pad $c97e
 
 ;-------------------------------------------------------------------------------
 __c97e:     lda $049d          ; $c97e: ad 9d 04
@@ -1265,8 +1265,8 @@ __c9a1:     lda #$01           ; $c9a1: a9 01
 
 ;-------------------------------------------------------------------------------
             lda #$20           ; $c9b3: a9 20
-            ldx #$a5           ; $c9b5: a2 a5
-            ldy #$05           ; $c9b7: a0 05
+            ldx #$a4
+            ldy #$06
             jsr __fa04         ; $c9b9: 20 04 fa
             .db <__c930, >__c930
             tya                ; $c9be: 98
@@ -1323,8 +1323,8 @@ __ca0a:     lda #$20           ; $ca0a: a9 20
             lda $049d          ; $ca18: ad 9d 04
             beq __ca28         ; $ca1b: f0 0b
             lda #$20           ; $ca1d: a9 20
-            ldx #$a5           ; $ca1f: a2 a5
-            ldy #$05           ; $ca21: a0 05
+            ldx #$a4
+            ldy #$06
             jsr __fa04         ; $ca23: 20 04 fa
             .db <__c930, >__c930
 __ca28:     jmp __c9d8         ; $ca28: 4c d8 c9
@@ -8282,24 +8282,25 @@ __ff9d:     lda $050b,x        ; $ff9d: bd 0b 05
             ;     L  I  C  E  N  C  I  T  A     D  E
 __c2d0:     .hex 17 14 0c 0f 19 0c 14 1e 0a 26 0e 0f
 
-            .hex ff ff ff ff   ; $ffb5: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffb9: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffbd: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffc1: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffc5: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffc9: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffcd: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffd1: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffd5: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffd9: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffdd: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffe1: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffe5: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffe9: ff ff ff ff   Data
-            .hex ff ff ff ff   ; $ffed: ff ff ff ff   Data
-            .hex ff 00 01 02   ; $fff1: ff 00 01 02   Data
-            .hex 03 04 05 06   ; $fff5: 03 04 05 06   Data
-            .hex 07            ; $fff9: 07            Data
+            ;     S  U  P  E  R  A
+__c930:     .hex 1d 1f 1b 0f 1c 0a
+
+            .hex ff ff ff ff   ; $ffbb: ff ff ff ff   Data
+            .hex ff ff ff ff   ; $ffbf: ff ff ff ff   Data
+            .hex ff ff ff ff   ; $ffc3: ff ff ff ff   Data
+            .hex ff ff ff ff   ; $ffc7: ff ff ff ff   Data
+            .hex ff ff ff ff   ; $ffcb: ff ff ff ff   Data
+            .hex ff ff ff ff   ; $ffcf: ff ff ff ff   Data
+            .hex ff ff ff ff   ; $ffd3: ff ff ff ff   Data
+            .hex ff ff ff ff   ; $ffd7: ff ff ff ff   Data
+            .hex ff ff ff ff   ; $ffdb: ff ff ff ff   Data
+            .hex ff ff ff ff   ; $ffdf: ff ff ff ff   Data
+            .hex ff ff ff ff   ; $ffe3: ff ff ff ff   Data
+            .hex ff ff ff ff   ; $ffe7: ff ff ff ff   Data
+            .hex ff ff ff ff   ; $ffeb: ff ff ff ff   Data
+            .hex ff ff ff 00   ; $ffef: ff ff ff 00   Data
+            .hex 01 02 03 04   ; $fff3: 01 02 03 04   Data
+            .hex 05 06 07      ; $fff7: 05 06 07      Data
 
 ;-------------------------------------------------------------------------------
 ; Vector Table
