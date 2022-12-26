@@ -30,4 +30,15 @@ dd if=chr/plus.bin of="$ROM" conv=notrunc bs=1 seek=$((0x23ff0))
 dd if=chr/plus.bin of="$ROM" conv=notrunc bs=1 seek=$((0x24ff0))
 dd if=chr/plus.bin of="$ROM" conv=notrunc bs=1 seek=$((0x25ff0))
 
+echo "Updating Levels..."
+dd if=levels/level-25.bin of="$ROM" conv=notrunc bs=1 seek=$((0x02a90))
+dd if=levels/level-27.bin of="$ROM" conv=notrunc bs=1 seek=$((0x02d30))
+dd if=levels/level-35.bin of="$ROM" conv=notrunc bs=1 seek=$((0x042b0))
+dd if=levels/level-40.bin of="$ROM" conv=notrunc bs=1 seek=$((0x04940))
+dd if=levels/level-46.bin of="$ROM" conv=notrunc bs=1 seek=$((0x05120))
+dd if=levels/level-59.bin of="$ROM" conv=notrunc bs=1 seek=$((0x06d30))
+dd if=levels/level-66.bin of="$ROM" conv=notrunc bs=1 seek=$((0x08160))
+dd if=levels/level-72.bin of="$ROM" conv=notrunc bs=1 seek=$((0x08940))
+dd if=levels/level-98.bin of="$ROM" conv=notrunc bs=1 seek=$((0x0c160))
+
 echo "Done"
