@@ -28,6 +28,14 @@ povas esti pirateco.
 Bubble Bobble (USA).nes
 CRC32: 5E900522
 
+NOTOJ
+-----
+La esperanta alfabeto estas uzata de la pasvorta sistemo,
+kaj tiel iu ajn pasvorto, kiun vi trovas en la interreto,
+ne plu funkcias en ĉi tiu traduko. Validaj pasvortoj por
+niveloj 1-99 de ambaŭ facilecoj (malsuperaj kaj superaj)
+estas inkluzivitaj. Vidu la dosieron pasvortoj.txt.
+
 HISTORIO
 --------
 v1.0    27/12/2022
