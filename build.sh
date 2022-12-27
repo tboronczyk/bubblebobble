@@ -32,6 +32,7 @@ dd if=chr/plus.bin of="$ROM" conv=notrunc bs=1 seek=$((0x25ff0))
 dd if=chr/pop.bin of="$ROM" conv=notrunc bs=1 seek=$((0x212d0))
 dd if=chr/pop.bin of="$ROM" conv=notrunc bs=1 seek=$((0x262d0))
 dd if=chr/hurry.bin of="$ROM" conv=notrunc bs=1 seek=$((0x21eb0))
+dd if=chr/parents.bin of="$ROM" conv=notrunc bs=1 seek=$((0x27750))
 
 echo "Updating Levels..."
 dd if=levels/level-25.bin of="$ROM" conv=notrunc bs=1 seek=$((0x02a90))
