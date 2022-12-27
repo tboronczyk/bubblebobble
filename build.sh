@@ -2,7 +2,10 @@
 
 set -e
 
+ORIG="Bubble Bobble (USA).nes"
 ROM="bubblebobble-eo.nes"
+IPS="bubblebobble-eo.ips"
+FLIPS="/opt/floating/flips"
 
 echo "Assembling ROM..."
 cd src
@@ -10,7 +13,7 @@ cd src
 cp bb.nes ../$ROM
 cd ..
 
-echo "Updating CHR..."
+echo -e "\nUpdating CHR..."
 dd if=chr/alphabet1.bin of="$ROM" conv=notrunc bs=1 seek=$((0x20010))
 dd if=chr/alphabet2.bin of="$ROM" conv=notrunc bs=1 seek=$((0x22010))
 dd if=chr/alphabet2.bin of="$ROM" conv=notrunc bs=1 seek=$((0x23010))
@@ -34,7 +37,7 @@ dd if=chr/pop.bin of="$ROM" conv=notrunc bs=1 seek=$((0x262d0))
 dd if=chr/hurry.bin of="$ROM" conv=notrunc bs=1 seek=$((0x21eb0))
 dd if=chr/parents.bin of="$ROM" conv=notrunc bs=1 seek=$((0x27750))
 
-echo "Updating Levels..."
+echo -e "\nUpdating levels..."
 dd if=levels/level-25.bin of="$ROM" conv=notrunc bs=1 seek=$((0x02a90))
 dd if=levels/level-27.bin of="$ROM" conv=notrunc bs=1 seek=$((0x02d30))
 dd if=levels/level-35.bin of="$ROM" conv=notrunc bs=1 seek=$((0x042b0))
@@ -45,4 +48,7 @@ dd if=levels/level-66.bin of="$ROM" conv=notrunc bs=1 seek=$((0x08160))
 dd if=levels/level-72.bin of="$ROM" conv=notrunc bs=1 seek=$((0x08940))
 dd if=levels/level-98.bin of="$ROM" conv=notrunc bs=1 seek=$((0x0c160))
 
-echo "Done"
+echo -e "\nGenerating patch..."
+$FLIPS -c -i "$ORIG" "$ROM" "$IPS"
+
+echo -e "\nDone"
